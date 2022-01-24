@@ -1,0 +1,12 @@
+name: auto-merge PRs by dependabot or gliff-ai-robot
+on: pull_request_target
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  automerge-bots:
+    uses: gliff-ai/.github/.github/workflows/automerge-bots.yml@main
+    secrets:
+      ROBOT_PAT: ${{ secrets.ROBOT_PAT }}

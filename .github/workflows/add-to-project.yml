@@ -1,0 +1,12 @@
+name: automatically add to project board
+on:
+  issues:
+    types: [opened, transferred, reopened, unlocked]
+  pull_request:
+    types: [opened, edited, synchronize, auto_merge_enabled, reopened]
+
+jobs:
+  add_to_project:
+    uses: gliff-ai/.github/.github/workflows/add-to-project.yml@main
+    secrets:
+      ROBOT_PAT: ${{ secrets.ROBOT_PAT }}

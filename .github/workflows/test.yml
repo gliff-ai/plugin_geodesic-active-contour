@@ -1,0 +1,29 @@
+name: Test
+on: push
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build in Docker
+        run: docker build . -t store
+      - name: run Docker and wait
+        run: |
+           touch db.sqlite3
+           docker run -d -p 8000:8000 -e DJANGO_SETTINGS_MODULE=server.settings.test  -v $PWD/db.sqlite3:/app/db.sqlite3 store
+           while ! curl 127.0.0.1:8000/django/api; do
+             echo "waiting"
+             sleep 1
+           done
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: cd __tests__  && npm i
+      - name: Run Tests
+        run: cd __tests__  && npm test

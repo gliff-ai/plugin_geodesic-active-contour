@@ -1,0 +1,13 @@
+name: scheduled batch of minor/patch updates
+on:
+  schedule:
+    - cron: "00 06 * * 1"
+
+jobs:
+  npm_update:
+    uses: gliff-ai/.github/.github/workflows/dependency-updates.yml@main
+    with:
+      package_manager: pipenv
+      main_branch: staging
+    secrets:
+      ROBOT_PAT: ${{ secrets.ROBOT_PAT }}
