@@ -10,12 +10,14 @@ class Plugin:
         """Run the plugin.
         Use the call method to run your code.
         Inputs:
-            image: A PIL Image object.
-            metadata: A dictionary of metadata.
+            image: a PIL Image object
+            metadata: a dictionary of metadata
+            annotations: a list of annotation objects
         Outputs:
-            tuple of - 
-                image: A PIL Image object.
-                metadata: A dictionary of metadata.
+            tuple of updated - 
+                image: a PIL Image object
+                metadata: a dictionary of metadata
+                annotations: a list of annotation objects
         """
 
 
