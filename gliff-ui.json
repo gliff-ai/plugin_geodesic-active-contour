@@ -1,0 +1,8 @@
+{
+  "ui": {
+    "title": "Example Plugin",
+    "description": "This is an example plugin",
+    "icon": "fa-cog",
+    "active-in": ["annotate"]
+  }
+}
