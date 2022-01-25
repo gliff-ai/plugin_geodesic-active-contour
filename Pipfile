@@ -4,9 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-scikit-image = "*"
+scikit-image = "0.19.1"
 
 [dev-packages]
+flake8 = "4.0.0"
+black = "21.11b1"
 
 [requires]
 python_version = "3.10"
