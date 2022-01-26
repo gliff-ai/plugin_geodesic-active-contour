@@ -15,7 +15,7 @@ class Plugin:
 
     def __call__(self, image, metadata, annotations):
         """Run morphological geodesic active contours for segmentation.
-        Basically nicked from: 
+        Basically nicked from: https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_morphsnakes.html
         Use the call method to run your code.
         Inputs:
             image: a PIL Image object
