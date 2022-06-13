@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-scikit-image = "0.19.1"
+scikit-image = "0.19.3"
 
 [dev-packages]
 flake8 = "4.0.0"
